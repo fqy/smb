@@ -6,10 +6,10 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Created by FQY on 2015/4/14.
+ * Created by fqy on 2015/4/20.
  */
-public interface Figure {
-    public void initFigure(Container container);
-    public void setCoordinate(int X, int Y);
-    public Coordinate getCoordinate();
+public abstract class Figure extends JPanel{
+    //public abstract void initFigure(Container container);
+    public abstract void setCoordinate(int X, int Y);
+    public abstract Coordinate getCoordinate();
 }

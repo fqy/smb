@@ -1,11 +1,9 @@
-package com.fqy.smb.Behavior;
+package com.fqy.smb.behavior;
 
-import com.fqy.smb.coordinate.Coordinate;
 import com.fqy.smb.figure.Figure;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.util.Collection;
 
 /**
  * Created by FQY on 2015/4/17.
@@ -13,6 +11,7 @@ import java.util.Collection;
 public class Behavior implements KeyListener{
     private Figure figure;
     private int curX, curY;
+    private int iStep = 50;
     /**
      * Invoked when a key has been typed.
      * See the class description for {@link KeyEvent} for a definition of
@@ -35,16 +34,16 @@ public class Behavior implements KeyListener{
     public void keyPressed(KeyEvent e) {
         switch (e.getKeyCode()){
             case KeyEvent.VK_UP:
-                curY -= 10;
+                curY -= iStep;
                 break;
             case KeyEvent.VK_RIGHT:
-                curX += 10;
+                curX += iStep;
                 break;
             case KeyEvent.VK_DOWN:
-                curY += 10;
+                curY += iStep;
                 break;
             case KeyEvent.VK_LEFT:
-                curX -= 10;
+                curX -= iStep;
                 break;
         }
         figure.setCoordinate(curX, curY);

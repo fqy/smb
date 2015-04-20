@@ -1,6 +1,6 @@
-package com.fqy.smb.Main;
+package com.fqy.smb.main;
 
-import com.fqy.smb.Behavior.Behavior;
+import com.fqy.smb.behavior.Behavior;
 
 import javax.swing.*;
 import java.awt.*;
@@ -20,12 +20,14 @@ public class Window {
     private Window() {
         mainWindow = new JFrame("SuperMeatBall");
         mainWindow.setLayout(null);
-        mainWindow.setBounds(100, 100, 600, 400);
+        mainWindow.setBounds(100, 100, 1000, 600);
         mainWindow.setResizable(false);
+        //强制转换为jpanel，来使其透明化
+        ((JPanel) mainWindow.getContentPane()).setOpaque(false);
         mainWindow.setVisible(true);
     }
 
-    public Container getContainer(){
+    public JFrame getContainer(){
         return mainWindow;
     }
 
