@@ -2,17 +2,18 @@ package com.fqy.smb.figure;
 
 import com.fqy.smb.coordinate.Coordinate;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 /**
  * Created by FQY on 2015/4/14.
  */
 public class NormalFigure extends Figure{
-    private Coordinate coordinate;
-    private Container parent;
     private String sImagePath = "resource//normalFigure.png";
-    private int width, height;
 
     /*@Override
     public void initFigure(Container parent) {
@@ -24,20 +25,20 @@ public class NormalFigure extends Figure{
         this.draw();
     }*/
 
-    @Override
-    public void setCoordinate(int X, int Y) {
-        figure.setLocation(X, Y);
+    public NormalFigure() throws IOException {
+        super();
+        this.coordinate = new Coordinate();
+        this.coordinate.setCoordinate(100, 500);
+        setFigureImage(this.sImagePath);
     }
 
     @Override
-    public Coordinate getCoordinate() {
-        return this.coordinate;
+    public void paintComponent(Graphics g){
+        g.drawImage(this.figureImage, this.coordinate.getX(), this.coordinate.getY(), 100, 150, null);
+        g = null;
     }
 
-    public void draw(){
-        this.parent.add(figure);
-        figure.setBounds(this.coordinate.getX(),this.coordinate.getY(),this.coordinate.getX(),this.coordinate.getY());
-    }
+    public void draw(){ }
 
 
 }

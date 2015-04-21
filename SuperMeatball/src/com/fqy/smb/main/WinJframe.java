@@ -8,8 +8,8 @@ import java.awt.*;
 /**
  * Created by FQY on 2015/4/17.
  */
-public class Window {
-    private static Window ourInstance = new Window();
+public class WinJframe extends JFrame{
+    private static Window ourInstance = new WinJframe();
     private static JFrame mainWindow;
     private Behavior behavior;
 
@@ -17,7 +17,7 @@ public class Window {
         return ourInstance;
     }
 
-    private Window() {
+    private WinJframe() {
         mainWindow = new JFrame("SuperMeatBall");
         mainWindow.setLayout(null);
         mainWindow.setBounds(100, 100, 1000, 600);
