@@ -10,12 +10,14 @@ import com.fqy.smb.map.Map1;
  */
 public class Main {
     public static void main(String[] args) {
-        Window window = Window.getInstance();
-        Map map = new Map1(window.getContainer());
+        WinJframe mainWin = WinJframe.getMainWin();
+        Map map1 = new Map1();
         Figure normalFigure = new NormalFigure();
-        normalFigure.initFigure(window.getContainer());
         Behavior behavior = new Behavior();
         behavior.assocFigure(normalFigure);
-        window.assocBehavior(behavior);
+        mainWin.assocBehavior(behavior);
+        mainWin.getLayeredPane().add(map1, new Integer(Integer.MIN_VALUE));
+        mainWin.add(normalFigure);
+
     }
 }

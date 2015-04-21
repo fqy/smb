@@ -25,17 +25,21 @@ public class NormalFigure extends Figure{
         this.draw();
     }*/
 
-    public NormalFigure() throws IOException {
+    public NormalFigure(){
         super();
         this.coordinate = new Coordinate();
         this.coordinate.setCoordinate(100, 500);
-        setFigureImage(this.sImagePath);
+        try {
+            setFigureImage(this.sImagePath);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
-    public void paintComponent(Graphics g){
-        g.drawImage(this.figureImage, this.coordinate.getX(), this.coordinate.getY(), 100, 150, null);
-        g = null;
+    public void paintComponents(Graphics g){
+        g.drawImage(this.figureImage, this.coordinate.getX(), this.coordinate.getY(), 100, 150, this);
+        //g = null;
     }
 
     public void draw(){ }

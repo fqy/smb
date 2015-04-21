@@ -46,7 +46,7 @@ public class Behavior implements KeyListener{
                 curX -= iStep;
                 break;
         }
-        figure.setCoordinate(curX, curY);
+        //figure.setCoordinate(curX, curY);
     }
 
     /**
