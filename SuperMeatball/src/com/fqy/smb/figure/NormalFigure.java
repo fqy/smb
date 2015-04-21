@@ -8,21 +8,21 @@ import java.awt.*;
 /**
  * Created by FQY on 2015/4/14.
  */
-public class NormalFigure implements Figure{
+public class NormalFigure extends Figure{
     private Coordinate coordinate;
     private Container parent;
-    private JLabel figure;
+    private String sImagePath = "resource//normalFigure.png";
     private int width, height;
 
-    @Override
+    /*@Override
     public void initFigure(Container parent) {
         this.parent = parent;
         this.coordinate = new Coordinate();
         figure = new JLabel();
-        this.coordinate.setCoordinate(100,100);
-        figure.setText("asdasdasds");
+        this.coordinate.setCoordinate(100, 100);
+        figure.setIcon(new ImageIcon(sImagePath));
         this.draw();
-    }
+    }*/
 
     @Override
     public void setCoordinate(int X, int Y) {
