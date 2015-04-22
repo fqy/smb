@@ -5,6 +5,7 @@ import com.fqy.smb.coordinate.Coordinate;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -20,9 +21,11 @@ public abstract class Figure extends JPanel{
     protected Image figureImage;
 
     //public abstract void initFigure(Container container);
-    //public abstract void setCoordinate(int X, int Y);
+    public void setCoordinate(int X, int Y){
+        this.coordinate.setCoordinate(X, Y);
+    }
     protected void setFigureImage(String sImagePath) throws IOException {
-        this.figureImage = ImageIO.read(new FileInputStream(sImagePath));
+        this.figureImage = ImageIO.read(new File(sImagePath));
     }
 
     public Coordinate getCoordinate(){

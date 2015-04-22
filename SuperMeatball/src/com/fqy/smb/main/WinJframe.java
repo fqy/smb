@@ -1,6 +1,8 @@
 package com.fqy.smb.main;
 
 import com.fqy.smb.behavior.Behavior;
+import com.fqy.smb.figure.Figure;
+import com.fqy.smb.figure.NormalFigure;
 
 import javax.swing.*;
 import java.awt.*;
@@ -23,7 +25,7 @@ public class WinJframe extends JFrame{
     }
 
     private static void initWin(){
-        mainWin.setLayout(null);
+        //mainWin.setLayout(null);
         mainWin.setBounds(100, 100, 1000, 600);
         mainWin.setResizable(false);
         //强制转换为jpanel，来使其透明化

@@ -11,7 +11,7 @@ import java.awt.event.KeyListener;
 public class Behavior implements KeyListener{
     private Figure figure;
     private int curX, curY;
-    private int iStep = 50;
+    private int iStep = 100;
     /**
      * Invoked when a key has been typed.
      * See the class description for {@link KeyEvent} for a definition of
@@ -46,7 +46,8 @@ public class Behavior implements KeyListener{
                 curX -= iStep;
                 break;
         }
-        //figure.setCoordinate(curX, curY);
+        figure.setCoordinate(curX, curY);
+        figure.repaint();
     }
 
     /**

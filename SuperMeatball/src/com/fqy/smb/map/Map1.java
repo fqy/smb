@@ -2,13 +2,14 @@ package com.fqy.smb.map;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
 import java.io.IOException;
 
 /**
  * Created by fqy on 2015/4/19.
  */
 public class Map1 extends Map {
-    private String sImagePath = "resource//map1.jpg";
+    private String sImagePath = "resource" + File.separator + "map1.jpg";
 
     public Map1(){
         super();
@@ -21,7 +22,8 @@ public class Map1 extends Map {
     }
 
     @Override
-    public void paintComponents(Graphics g){
+    public void paintComponent(Graphics g){
+        super.paintComponent(g);
         g.drawImage(this.mapImage, 0, 0, 1000, 600, null);
         g = null;
     }
