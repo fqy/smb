@@ -2,6 +2,7 @@ package com.fqy.smb.behavior;
 
 import com.fqy.smb.figure.Figure;
 
+import javax.swing.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
@@ -10,6 +11,7 @@ import java.awt.event.KeyListener;
  */
 public class Behavior implements KeyListener{
     private Figure figure;
+    private JPanel jPanel;
     private int curX, curY;
     private int iStep = 100;
     /**
@@ -47,7 +49,7 @@ public class Behavior implements KeyListener{
                 break;
         }
         figure.setCoordinate(curX, curY);
-        figure.repaint();
+        jPanel.repaint();
     }
 
     /**
@@ -62,7 +64,8 @@ public class Behavior implements KeyListener{
 
     }
 
-    public void assocFigure(Figure figure){
+    public void assocFigure(JPanel jPanel,Figure figure){
+        this.jPanel = jPanel;
         this.figure = figure;
         this.curX = figure.getCoordinate().getX();
         this.curY = figure.getCoordinate().getY();

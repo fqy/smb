@@ -31,4 +31,8 @@ public abstract class Figure extends JPanel{
     public Coordinate getCoordinate(){
         return this.coordinate;
     }
+    public void draw(Graphics g, JPanel jPanel){
+        g.drawImage(this.figureImage, this.coordinate.getX(), this.coordinate.getY(), 100, 150, jPanel);
+    }
+
 }

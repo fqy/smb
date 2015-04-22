@@ -14,7 +14,7 @@ import java.io.IOException;
  * Created by FQY on 2015/4/14.
  */
 public class NormalFigure extends Figure{
-    private String sImagePath = "resource" + File.separator + "normalFigure.png";
+    private String sImagePath = "resource//normalFigure.png";
 
     /*@Override
     public void initFigure(Container parent) {
@@ -28,6 +28,8 @@ public class NormalFigure extends Figure{
 
     public NormalFigure(){
         super();
+        this.setDoubleBuffered(true);
+        this.setOpaque(true);
         this.coordinate = new Coordinate();
         this.coordinate.setCoordinate(100, 400);
         try {
@@ -40,14 +42,13 @@ public class NormalFigure extends Figure{
     @Override
     public void paintComponent(Graphics g){
         super.paintComponent(g);
-
         //System.out.println(this.coordinate.getX() + ";" + this.coordinate.getY());
         //g.drawImage(this.figureImage, this.coordinate.getX(), this.coordinate.getY(), 100, 150, this);
-        g.drawLine(this.coordinate.getX(),this.coordinate.getY(),this.coordinate.getX()+100,this.coordinate.getY()+100);
+//        g.drawLine(this.coordinate.getX(),this.coordinate.getY(),this.coordinate.getX()+100,this.coordinate.getY()+100);
         //g = null;
     }
 
-    public void draw(){ }
+
 
 
 }
