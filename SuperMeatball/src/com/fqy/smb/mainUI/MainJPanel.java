@@ -1,4 +1,4 @@
-package com.fqy.smb.main;
+package com.fqy.smb.mainUI;
 
 import com.fqy.smb.behavior.Behavior;
 import com.fqy.smb.figure.Figure;
@@ -29,10 +29,12 @@ public class MainJPanel extends JPanel{
         behavior = new Behavior();
         add(gameMap);
         add(figure);
+        //获取鼠标焦点，从而可以让jpanel监听事件
+        setFocusable(true);
         addKeyListener(behavior);
     }
     private static void init(){
-        behavior.assocFigure(mainJPanel, figure);
+        behavior.assocFigure(mainJPanel, gameMap);
     }
 
     /*//关联键盘监听事件
@@ -44,7 +46,6 @@ public class MainJPanel extends JPanel{
     @Override
     public void paintComponent(Graphics g){
         super.paintComponent(g);
-        System.out.print("ss");
         gameMap.drawSelf(g);
         figure.drawSelf(g);
     }

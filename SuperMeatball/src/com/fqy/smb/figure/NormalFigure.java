@@ -29,9 +29,8 @@ public class NormalFigure extends Figure{
     public NormalFigure(){
         super();
         this.setDoubleBuffered(true);
-        this.setOpaque(true);
-        this.coordinate = new Coordinate();
-        this.coordinate.setCoordinate(100, 400);
+        setFigureLocation(100, 400);
+        setFigureSpeed(50);
         try {
             setFigureImage(this.IMAGEPATH);
         } catch (IOException e) {

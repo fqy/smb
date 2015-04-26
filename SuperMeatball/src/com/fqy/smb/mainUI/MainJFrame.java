@@ -1,4 +1,4 @@
-package com.fqy.smb.main;
+package com.fqy.smb.mainUI;
 
 import javax.swing.*;
 
@@ -8,17 +8,15 @@ import javax.swing.*;
 public class MainJFrame extends JFrame{
     public MainJFrame(String title){
         super(title);
+        MainJPanel mainJPanel = MainJPanel.getMainJPanel();
+        add(mainJPanel);
         //setLayout(null);
         setBounds(100, 100, 1000, 600);
         setResizable(false);
         //强制转换为jpanel，来使其透明化
         //((JPanel) getContentPane()).setOpaque(false);
         setVisible(true);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        MainJPanel mainJPanel = MainJPanel.getMainJPanel();
-        add(mainJPanel);
-
-
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
     public static void main(String[] args) {

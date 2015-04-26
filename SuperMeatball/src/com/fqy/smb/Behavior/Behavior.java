@@ -1,6 +1,7 @@
 package com.fqy.smb.behavior;
 
 import com.fqy.smb.figure.Figure;
+import com.fqy.smb.gameMap.GameMap;
 
 import javax.swing.*;
 import java.awt.event.KeyEvent;
@@ -10,10 +11,10 @@ import java.awt.event.KeyListener;
  * Created by FQY on 2015/4/17.
  */
 public class Behavior implements KeyListener{
-    private Figure figure;
+    private GameMap gameMap;
     private JPanel jPanel;
     private int curX, curY;
-    private int iStep = 100;
+    private int iFigureSpeed = 10;
     /**
      * Invoked when a key has been typed.
      * See the class description for {@link KeyEvent} for a definition of
@@ -36,19 +37,19 @@ public class Behavior implements KeyListener{
     public void keyPressed(KeyEvent e) {
         switch (e.getKeyCode()){
             case KeyEvent.VK_UP:
-                curY -= iStep;
+                //curY -= iStep;
                 break;
             case KeyEvent.VK_RIGHT:
-                curX += iStep;
+                curX -= iFigureSpeed;
                 break;
             case KeyEvent.VK_DOWN:
-                curY += iStep;
+                //curY += iStep;
                 break;
             case KeyEvent.VK_LEFT:
-                curX -= iStep;
+                curX += iFigureSpeed;
                 break;
         }
-        figure.setCoordinate(curX, curY);
+        gameMap.setMapLocation(curX, curY);
         jPanel.repaint();
     }
 
@@ -64,10 +65,10 @@ public class Behavior implements KeyListener{
 
     }
 
-    public void assocFigure(JPanel jPanel,Figure figure){
+    public void assocFigure(JPanel jPanel,GameMap gameMap){
         this.jPanel = jPanel;
-        this.figure = figure;
-        this.curX = figure.getCoordinate().getX();
-        this.curY = figure.getCoordinate().getY();
+        this.gameMap = gameMap;
+        this.curX = gameMap.getMapLocation().getX();
+        this.curY = gameMap.getMapLocation().getY();
     }
 }

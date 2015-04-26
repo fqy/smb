@@ -11,10 +11,12 @@ import java.io.IOException;
  */
 public class GameMap1 extends GameMap {
     private final String IMAGEPATH = "resource//map1.jpg";
-    public Figure normalFigure = new NormalFigure();
 
     public GameMap1(){
         super();
+        this.width = 1000;
+        this.height = 600;
+        setMapLocation(0, 0);
         //this.setLayout(null);
         //this.mainWindow.getLayeredPane().add(mapLabel, new Integer(Integer.MIN_VALUE));
         try {
